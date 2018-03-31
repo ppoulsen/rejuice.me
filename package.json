@@ -1,0 +1,13 @@
+{
+  "name": "juicestop",
+  "version": "1.0.0",
+  "description": "Searchable Juice Stop Flavors",
+  "main": "index.js",
+  "repository": "https://github.com/ppoulsen/juicestop.git",
+  "author": "Paul Poulsen <ppoulsen21@gmail.com> (https://github.com/ppoulsen)",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "cheerio": "^1.0.0-rc.2"
+  }
+}
