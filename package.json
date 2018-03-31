@@ -7,7 +7,17 @@
   "author": "Paul Poulsen <ppoulsen21@gmail.com> (https://github.com/ppoulsen)",
   "license": "MIT",
   "private": true,
-  "devDependencies": {
-    "cheerio": "^1.0.0-rc.2"
+  "scripts": {
+    "build": "cd client && npm run build",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "start:prod": "npm run build && cross-env NODE_ENV=production npm run server",
+    "server": "node server.js",
+    "client": "cd client && npm run start"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "concurrently": "^3.5.1",
+    "cross-env": "^5.1.4",
+    "express": "^4.16.3"
   }
 }
