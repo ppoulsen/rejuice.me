@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AppBar from 'material-ui/AppBar';
+import IconButton from 'material-ui/IconButton';
+import muiJuiceTheme from './theme';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <MuiThemeProvider muiTheme={muiJuiceTheme}>
+        <div className="App">
+          <AppBar title="Re:Juice Me"
+            iconElementLeft={<span />}
+            iconElementRight={<IconButton target="_blank" href="https://github.com/ppoulsen" iconClassName="fab fa-github"/>} />
+        </div>
+      </MuiThemeProvider>
     );
   }
 }
