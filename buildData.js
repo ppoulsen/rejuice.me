@@ -1,6 +1,7 @@
 const fs = require('fs');
 const https = require('https');
 const cheerio = require('cheerio');
+const path = require('path');
 
 // The menu is stored as an html string on a JS function call
 // Looks like this:
@@ -56,7 +57,8 @@ function parseMenuXml(xmlString) {
 function writeObjectToFile(data) {
   return new Promise((resolve, reject) => {
     const jsonString = JSON.stringify(data, null, 2);
-    fs.writeFile('menu.json', jsonString, err => {
+    const filePath = path.join(__dirname, 'client/src/data/menu.json');
+    fs.writeFile(filePath, jsonString, err => {
       if (err) {
         reject(err);
         return;
