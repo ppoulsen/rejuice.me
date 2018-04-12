@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
-import TextField from 'material-ui/TextField';
+import SearchField from './SearchField';
 import FilteredMenu from './FilteredMenu';
 import './App.css';
 
@@ -19,7 +19,7 @@ class App extends Component {
             />
           }
         />
-        <TextField style={{width: '80%'}} hintText="Search" />
+        <SearchField />
         <FilteredMenu />
       </div>
     );
