@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:5000/",
+  "homepage": "https://ppoulsen.github.io/rejuice.me/",
   "dependencies": {
     "fuse.js": "^3.2.0",
     "material-ui": "^0.20.0",
