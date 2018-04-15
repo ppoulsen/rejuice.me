@@ -9,8 +9,10 @@ const style = {
 
 export default class FilteredMenu extends React.Component {
   renderMenuItems() {
+    const smoothieSections = this.props.sections.filter(s => s.name.includes('Smoothie'));
     const filteredEntities = this.props.filteredEntities
       .map(id => this.props.entities.find(e => e.id === id))
+      .filter(e => !!smoothieSections.find(s => s.id === e.sectionId))
       .filter(e => !!e);
     return filteredEntities.map(e => <MenuItem {...e} key={e.id} />);
   }
