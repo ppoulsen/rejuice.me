@@ -20,6 +20,9 @@ export default class Disclaimer extends React.Component {
             All information on this site is unofficial and subject to change without notice.
             Contact Juice Stop directly or visit their web pages to confirm before your visit.
           </p>
+          <p className="disclaimer__text">
+            Favicon is an icon made by <a className="disclaimer__link" href="https://www.freepik.com/">Freepik</a> from <a className="disclaimer__link" href="https://www.flaticon.com/">www.flaticon.com</a>.
+          </p>
         </Paper>
       </div>
     );
