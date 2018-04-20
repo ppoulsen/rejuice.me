@@ -3,6 +3,20 @@ import Fuse from 'fuse.js';
 import initialMenuData from '../data/menu.json';
 import debounce from '../utils/debounce';
 
+function createEntityMetadata(entity) {
+  if (!entity.description && entity.description.length) {
+    return '';
+  }
+
+  const metadata = [];
+  const tokens = entity.description.toLowerCase().split(/[, &]+/);
+  if (tokens.includes('oj')) {
+    metadata.push('orange juice');
+  }
+  return metadata.join(' ');
+}
+
+initialMenuData.entities.forEach(e => e.metadata = createEntityMetadata(e));
 const initialState = {
   sections: initialMenuData.sections,
   entities: initialMenuData.entities,
@@ -11,7 +25,7 @@ const initialState = {
 
 export default class MenuContainer extends Container {
   fuse = new Fuse(initialMenuData.entities, {
-    keys: ['name', 'description'],
+    keys: ['name', 'description', 'metadata'],
     id: 'id',
     threshold: 0.4,
     tokenize: true,
